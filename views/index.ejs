@@ -33,20 +33,19 @@
 
     <div class="container-fluid card-container">
         <div class="row p-0 mx-0">
-            <% if (cars != '') { %>
-                <% for( let i = 0; i < cars.length; i++ ) { %>
+                <% for( let data of cars ) { %> <% let date=new Date(data.updatedAt) %> 
                     <div class="col-lg-4">
                         <div class="card card-car mx-auto my-2 g-0">
                             <div class="card_img mx-auto">
-                                <img src="<%= cars[i].image %>" alt="binar cars rental">
+                                <img src="<%= data.image %>" alt="binar cars rental">
                             </div>
                             <div class="card-body p-0" style="font-size: 14px">
-                                <p class="card-text mb-2 mt-3"><%= cars[i].name %></p>
-                                <p class="card-title">Rp <%= cars[i].price/1000 %>.000 / hari</p>
-                                <div class="time-updated"><i data-feather="clock" style="width: 18px; height: 18px;"></i> Updated at <%= cars[i].updatedAt %></div>
+                                <p class="card-text mb-2 mt-3"><%= data.name %></p>
+                                <p class="card-title">Rp <%= data.price/1000 %>.000 / hari</p>
+                                <div class="time-updated"><i data-feather="clock" style="width: 18px; height: 18px;"></i> Updated at <%= date.getDate() %> <%= date.toLocaleString(undefined, { mont:'short', year:'numeric' }) %>, <%= date.toLocaleTimeString(undefined, {hour12: true, hour:'2-digit', minute:'2-digit'}) %></div>
                                 <div class="button d-flex flex-row justify-content-center">
                                     <a href="#" class="btn btn-delete d-flex flex-row justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i data-feather="trash" style="width: 18px; height: 18px;"></i> Delete</a>
-                                    <a href="/cars/edit/<%= cars[i]._id %> " class="btn btn-edit d-flex flex-row justify-content-center align-items-center"><i data-feather="edit" style="width: 18px; height: 18px;"></i> Edit</a>
+                                    <a href="/cars/edit/<%= data._id %> " class="btn btn-edit d-flex flex-row justify-content-center align-items-center"><i data-feather="edit" style="width: 18px; height: 18px;"></i> Edit</a>
                                 </div>
                             </div>
                         </div>
@@ -70,16 +69,13 @@
                                     </div>
                                 </div>
                                 <div class="modal-button text-center mt-1 mb-3 d-flex flex-row justify-content-center align-items-start p-0">
-                                    <a href="/cars/delete/<%= cars[i]._id %>" class="btn btn-yes d-flex flex-row justify-content-center align-items-center">Ya</a>
+                                    <a href="/cars/delete/<%= data._id %>" class="btn btn-yes d-flex flex-row justify-content-center align-items-center">Ya</a>
                                     <button type="button" class="btn btn-no d-flex flex-row justify-content-center align-items-center" data-bs-dismiss="modal">Tidak</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 <% } %>
-            <% } else { %>
-                <h1 class="text-center text-secondary">No Cars Found</h1>
-            <% } %> 
         </div>
     </div>
 </section>

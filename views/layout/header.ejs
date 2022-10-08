@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCR <%= title %></title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <!-- CSS Custom -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="col-lg-9 header-navbar mx-auto" id="header-navbar">
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+            <a href="#" class="navbar-brand" style="cursor: pointer !important; z-index: 99;">
+                <img src="/img/Rectangle 62.png" alt="logo-brand" class="ms-2">
+            </a>
+
+            <div id="toggle-menu" class="side-nav-button position-absolute p-2 text-dark">
+                <i data-feather="menu" style="width: 24px; height: 24px;" class="fs-4"></i>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-lg-0 mb-2">
+                    <form class="input-group d-flex me-lg-2 me-2">
+                        <span class="input-group-text form-control-sm my-auto"><i data-feather="search" style="width: 18px; height: 18px; color: #D0D0D0;"></i></span>
+                        <input type="search" class="form-control my-auto" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary my-auto d-flex flex-row justify-content-center align-items-center" type="submit">Search</button>
+                    </form>
+
+                    <li class="nav-item dropdown ms-2">
+                        <a href="#" class="nav-link dropdown-toggle text-black fw-normal" id="navbarDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="/img/Group 15.png" alt="users-image" class="me-2">
+                            Unis Badri
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a href="#" class="dropdown-item">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>

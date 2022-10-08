@@ -1,0 +1,91 @@
+<%- include('layout/header') %> 
+<%- include('layout/sidebar') %>
+
+<section class="main-content position-absolute" style="background: #E5E5E5;" id="content">
+    <%- include('layout/breadcrumb') %>
+
+    <div class="container title-page">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-lg-2">
+                <h5 style="font-size: 20px; font-weight: 700; line-height: 30px;">List Car</h5>
+            </div>
+            <div class="col-lg-2 ps-0 pe-4">
+                <a href="/cars/add" class="btn btn-add d-flex flex-row align-items-center">
+                    <i data-feather="plus" style="width: 18px; height: 18px;"></i>
+                    <p class="mb-0">Add New Car</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <% if (message) { %>
+        <div class="alert alert-<%= message.type %> d-flex flex-row justify-content-center align-items-center position-absolute" role="alert">
+            <span><%= message.message %></span>
+        </div>
+    <% } %>
+
+    <div class="opsi-size d-flex flex-row align-items-start p-0">
+        <button class="btn btn-all">All</button>
+        <button class="btn btn-small">Small</button>
+        <button class="btn btn-medium">Medium</button>
+        <button class="btn btn-large">Large</button>
+    </div>
+
+    <div class="container-fluid card-container">
+        <div class="row p-0 mx-0">
+            <% if (cars != '') { %>
+                <% for( let i = 0; i < cars.length; i++ ) { %>
+                    <div class="col-lg-4">
+                        <div class="card card-car mx-auto my-2 g-0">
+                            <div class="card_img mx-auto">
+                                <img src="<%= cars[i].image %>" alt="binar cars rental">
+                            </div>
+                            <div class="card-body p-0" style="font-size: 14px">
+                                <p class="card-text mb-2 mt-3"><%= cars[i].name %></p>
+                                <p class="card-title">Rp <%= cars[i].price/1000 %>.000 / hari</p>
+                                <div class="time-updated"><i data-feather="clock" style="width: 18px; height: 18px;"></i> Updated at <%= cars[i].updatedAt %></div>
+                                <div class="button d-flex flex-row justify-content-center">
+                                    <a href="#" class="btn btn-delete d-flex flex-row justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i data-feather="trash" style="width: 18px; height: 18px;"></i> Delete</a>
+                                    <a href="/cars/edit/<%= cars[i]._id %> " class="btn btn-edit d-flex flex-row justify-content-center align-items-center"><i data-feather="edit" style="width: 18px; height: 18px;"></i> Edit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content d-flex flex-column align-items-center position-absolute">
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <div class="bg-modal" style="text-align: center;">
+                                            <img src="/img/img-BeepBeep.png" alt="">
+                                        </div>
+                                        <div class="header-modal mt-4">
+                                            <h5 class="text-center" style="font-weight: 700; font-size: 16px; line-height: 24px;">Menghapus Data Mobil</h5>
+                                        </div>
+                                        <div class="paragraf text-center mt-2">
+                                            <span style="font-weight: 300; font-size: 14px; line-height: 20px;">Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin ingin menghapus? </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-button text-center mt-1 mb-3 d-flex flex-row justify-content-center align-items-start p-0">
+                                    <a href="/cars/delete/<%= cars[i]._id %>" class="btn btn-yes d-flex flex-row justify-content-center align-items-center">Ya</a>
+                                    <button type="button" class="btn btn-no d-flex flex-row justify-content-center align-items-center" data-bs-dismiss="modal">Tidak</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } else { %>
+                <h1 class="text-center text-secondary">No Cars Found</h1>
+            <% } %> 
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<%- include('layout/footer') %> 

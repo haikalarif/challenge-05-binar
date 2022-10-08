@@ -1,0 +1,58 @@
+[{
+  "_id": {
+    "$oid": "6340c0ab0496b3bff5322acc"
+  },
+  "name": "Toyota / Yaris",
+  "size": "Small",
+  "price": "150000",
+  "image": "image_1665188011511_yaris.png",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665188011520"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665188011520"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6340c52d0f5cfa734fefcee7"
+  },
+  "name": "Toyota / Alphard",
+  "size": "Medium",
+  "price": "700000",
+  "image": "image_1665189165016_alphard.jpg",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665189165025"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665189165026"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6340c5480f5cfa734fefceea"
+  },
+  "name": "Toyota / Yaris",
+  "size": "Small",
+  "price": "150000",
+  "image": "image_1665189192721_yaris.png",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665189192727"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665189192727"
+    }
+  },
+  "__v": 0
+}]

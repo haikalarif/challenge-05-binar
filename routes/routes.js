@@ -39,6 +39,10 @@ router.post('/cars/add', upload, (req, res) => {
     })
 });
 
+router.get('/', (req, res) => {
+    res.render('dashboard', { title: "Dashboard" });
+});
+
 // GET All Cars route
 router.get('/cars', (req, res) => {
     Cars.find().exec((err, cars) => {
